@@ -159,6 +159,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     });
 
 </script>
+<script>
+        // Function to get URL parameters
+        function getURLParameter(name) {
+            name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+            var regex = new RegExp("[\\?&]" + name + "=([^&#]*)");
+            var results = regex.exec(location.search);
+            return results === null ? null : decodeURIComponent(results[1].replace(/\+/g, " "));
+        }
+
+        // Update the title based on the "version" parameter
+        (function updateTitle() {
+            const version = getURLParameter('version');
+            const titleElement = document.getElementById('page-title');
+
+            if (version === '2') {
+                titleElement.textContent = "Discover the Game-Changing Toy That Keeps Kids Away from Screens";
+            }
+        })();
+    </script>
 
 <!-- END MVMT EVERFLOW PRESELL PAGEVIEW PIXEL -->
     
@@ -276,7 +295,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
 
         </section>
-
+	
         <section class="page-cont">
 
             <div class="container">
